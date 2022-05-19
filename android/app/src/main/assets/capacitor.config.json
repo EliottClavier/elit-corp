@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "elit-corp",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
