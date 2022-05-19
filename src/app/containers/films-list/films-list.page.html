@@ -6,4 +6,10 @@
 
 <ion-content>
 
+  <div *ngFor="let film of filmsList">
+    <h1>{{ film.title }}</h1>
+    <p>{{ film.overview | slice:0:250 }}</p>
+  </div>
+
+  <p>test</p>
 </ion-content>
