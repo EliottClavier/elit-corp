@@ -1,13 +1,17 @@
 <ion-content fullscreen>
-  <ion-list-header>Films list</ion-list-header>
-  <ion-list *ngIf="filmsList.length; else emptyList">
-    <app-films-item *ngFor="let film of filmsList" [film]="film"></app-films-item>
-  </ion-list>
-  <ng-template #emptyList>
-    <ion-row class="custom-row">
-      <h1 class="custom-title">Aucun film</h1>
-      <ion-button (click)="getPopularFilms()">Rafraichir</ion-button>
-    </ion-row>
+  <div *ngIf="spinnerShown; else list" class="custom-row">
+    <ion-spinner name="crescent" color="primary"></ion-spinner>
+  </div>
+  <ng-template #list>
+    <ion-list-header>Films list</ion-list-header>
+    <ion-list *ngIf="filmsList.length; else emptyList">
+      <app-films-item *ngFor="let film of filmsList" [film]="film"></app-films-item>
+    </ion-list>
+    <ng-template #emptyList>
+      <ion-row class="custom-row">
+        <h1 class="custom-title">Aucun film</h1>
+        <ion-button (click)="getPopularFilms()">Rafraichir</ion-button>
+      </ion-row>
+    </ng-template>
   </ng-template>
-
 </ion-content>

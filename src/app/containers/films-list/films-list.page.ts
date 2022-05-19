@@ -12,6 +12,7 @@ import {TruncatePipe} from "../../pipes/truncate/truncate.pipe";
 export class FilmsListPage implements OnInit {
 
   public filmsList: Film[] = [];
+  public spinnerShown: boolean = true;
 
   constructor(private filmsService: FilmsService) { }
 
@@ -20,8 +21,10 @@ export class FilmsListPage implements OnInit {
   }
 
   public getPopularFilms(): void {
+    this.spinnerShown = true;
     this.filmsService.getPopularFilms().subscribe(
       res => {
+        this.spinnerShown = false;
         this.filmsList = res["results"];
       },
       error => console.log(error)
