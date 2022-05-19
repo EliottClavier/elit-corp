@@ -5,10 +5,9 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
-import { TruncatePipe } from "./pipes/truncate/truncate.pipe";
 
 @NgModule({
-  declarations: [AppComponent, TruncatePipe],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -18,8 +17,6 @@ import { TruncatePipe } from "./pipes/truncate/truncate.pipe";
   ],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],
-  exports: [
-    TruncatePipe
-  ]
+  exports: []
 })
 export class AppModule {}

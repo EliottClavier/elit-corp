@@ -11,20 +11,21 @@ import {TruncatePipe} from "../../pipes/truncate/truncate.pipe";
 })
 export class FilmsListPage implements OnInit {
 
-  public filmsList: Film[];
-  public response: any;
+  public filmsList: Film[] = [];
 
   constructor(private filmsService: FilmsService) { }
 
   ngOnInit() {
-     this.filmsService.getPopularFilms().subscribe(
-       res => {
-         console.log(res["results"]);
-         this.response = res;
-         this.filmsList = res["results"];
-       },
-       error => console.log(error)
-     );
+     this.getPopularFilms();
+  }
+
+  public getPopularFilms(): void {
+    this.filmsService.getPopularFilms().subscribe(
+      res => {
+        this.filmsList = res["results"];
+      },
+      error => console.log(error)
+    );
   }
 
 }

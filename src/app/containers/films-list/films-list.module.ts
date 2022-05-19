@@ -4,16 +4,19 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { FilmsListPageRoutingModule } from './films-list-routing.module';
 import { FilmsListPage } from './films-list.page';
-import {TruncatePipe} from "../../pipes/truncate/truncate.pipe";
+import {PipesModule} from "../../pipes/pipes.module";
+import {FilmsItemPageModule} from "../../components/films-item/films-item.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FilmsListPageRoutingModule
+    FilmsListPageRoutingModule,
+    PipesModule,
+    FilmsItemPageModule
   ],
-  providers: [TruncatePipe],
+  providers: [],
   declarations: [FilmsListPage]
 })
 export class FilmsListPageModule {}

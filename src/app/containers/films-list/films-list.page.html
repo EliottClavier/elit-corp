@@ -1,15 +1,18 @@
-<ion-header>
+<ion-header translucent>
   <ion-toolbar>
-    <ion-title>films-list</ion-title>
+    <ion-title>Liste des films</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen>
+    <ion-list *ngIf="filmsList.length; else emptyList">
+      <app-films-item *ngFor="let film of filmsList" [film]="film"></app-films-item>
+    </ion-list>
+  <ng-template #emptyList>
+    <ion-row class="custom-row">
+      <h1 class="custom-title">Aucun film</h1>
+      <ion-button (click)="getPopularFilms()">Rafraichir</ion-button>
+    </ion-row>
+  </ng-template>
 
-  <div *ngFor="let film of filmsList">
-    <h1>{{ film.title }}</h1>
-    <p>{{ film.overview | slice:0:250 }}</p>
-  </div>
-
-  <p>test</p>
 </ion-content>

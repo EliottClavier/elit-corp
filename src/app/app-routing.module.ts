@@ -15,7 +15,11 @@ const routes: Routes = [
   {
     path: 'films-detail',
     loadChildren: () => import('./containers/films-detail/films-detail.module').then( m => m.FilmsDetailPageModule)
+  },  {
+    path: 'films-item',
+    loadChildren: () => import('./components/films-item/films-item.module').then( m => m.FilmsItemPageModule)
   }
+
 ];
 @NgModule({
   imports: [
