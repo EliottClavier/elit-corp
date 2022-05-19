@@ -1,0 +1,7 @@
+{
+  "name": "elit-corp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
