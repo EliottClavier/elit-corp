@@ -1,4 +1,4 @@
-<ion-item (click)="redirect(film.id)" button text-wrap>
+<ion-item [routerLink]="'/films-detail/' + film.id" button text-wrap>
   <ion-avatar slot="start">
     <ion-img [src]="'https://image.tmdb.org/t/p/w500/' + film.backdrop_path"></ion-img>
   </ion-avatar>

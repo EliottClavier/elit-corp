@@ -17,8 +17,4 @@ export class FilmsItemPage implements OnInit {
   ngOnInit() {
   }
 
-  public redirect(id: number): void {
-    console.log(id)
-  }
-
 }
