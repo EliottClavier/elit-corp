@@ -9,12 +9,14 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { environment } from "../environments/environment";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { PipesModule } from "./pipes/pipes.module";
 import { WelcomeComponent } from "./containers/welcome/welcome.component";
 import { FilmsDetailComponent } from "./containers/films-detail/films-detail.component";
 import { FilmsListComponent } from "./containers/films-list/films-list.component";
 import { FilmsItemComponent } from "./components/films-item/films-item.component";
+import {LoginComponent} from "./components/login/login.component";
+import {RegisterComponent} from "./components/register/register.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FilmsItemComponent } from "./components/films-item/films-item.component
     WelcomeComponent,
     FilmsDetailComponent,
     FilmsListComponent,
-    FilmsItemComponent
+    FilmsItemComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   entryComponents: [],
   imports: [
@@ -35,6 +39,7 @@ import { FilmsItemComponent } from "./components/films-item/films-item.component
     CommonModule,
     FormsModule,
     PipesModule,
+    ReactiveFormsModule,
   ],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],

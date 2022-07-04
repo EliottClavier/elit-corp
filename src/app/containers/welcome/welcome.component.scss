@@ -1,34 +1,7 @@
-ion-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+ion-grid, ion-row {
   height: 100%;
   width: 100%;
   background-color: #3880ff;
-}
-
-div#div-button {
-  transition: all 0.4s;
-}
-
-div#div-button:hover {
-  transform: translate(10px, 10px);
-}
-
-button#button {
-  text-decoration: none;
-  border: 1px solid snow;
-  border-radius: 8px;
-  padding: 0.8em 1.2em;
-  background-color: snow;
-  color: #3880ff;
-  box-shadow: rgba(0, 0, 0, 0.15) 20px 20px 0;
-  transition: all 0.4s;
-}
-
-button#button:hover {
-  box-shadow: rgba(0, 0, 0, 0.15) 10px 10px 0;
 }
 
 div  {
@@ -49,11 +22,6 @@ h1, h2 {
   text-shadow: rgba(0, 0, 0, 0.15) 5px 5px;
 }
 
-div#form {
-  width: 80%;
-}
-
-.label {
-  font-size: 1.8em;
-  margin-bottom: 0.5em;
+p {
+  text-decoration: underline;
 }

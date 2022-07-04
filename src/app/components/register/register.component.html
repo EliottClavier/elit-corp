@@ -1,0 +1,11 @@
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+  <h3 *ngIf="displayError">{{ displayError }}</h3>
+  <div>
+    <input type="mail" formControlName="email" placeholder="Email" />
+    <input type="password" formControlName="password" placeholder="Password" />
+    <input type="password" formControlName="confirmPassword" placeholder="Confirm Password" />
+  </div>
+  <div id="div-button">
+    <button id="button" type="submit" [disabled]="!registerForm.valid">Get started !</button>
+  </div>
+</form>

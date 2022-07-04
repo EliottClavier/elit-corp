@@ -1,23 +1,20 @@
 <ion-content>
-  <ion-row>
-    <div>
-      <h2>Welcome to</h2>
-      <h1>ElitCorp</h1>
-    </div>
-    <div id="form">
-      <ion-item color="none" lines="none">
-        <ion-label class="label" position="stacked">Email</ion-label>
-        <ion-input type="mail" [value]="email" [(ngModel)]="email" [required]></ion-input>
-      </ion-item>
-      <ion-item color="none" lines="none">
-        <ion-label class="label" position="stacked">Password</ion-label>
-        <ion-input type="password" [value]="password" [(ngModel)]="password" [required]></ion-input>
-      </ion-item>
-    </div>
-    <div id="div-button">
-      <button (click)="login()" id="button">Get started !</button>
-    </div>
-  </ion-row>
-
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="10" class="ion-text-center">
+        <div>
+          <h2>Welcome to</h2>
+          <h1>ElitCorp</h1>
+        </div>
+        <div *ngIf="register; else login">
+          <app-register></app-register>
+        </div>
+        <ng-template #login>
+          <app-login></app-login>
+        </ng-template>
+        <p (click)="this.register = !this.register">{{ this.register ? 'Already an account ? Login !' : 'No account yet ? Register !' }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 

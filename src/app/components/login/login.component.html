@@ -1,0 +1,10 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <h3 *ngIf="displayError">{{ displayError }}</h3>
+  <div>
+    <input type="mail" formControlName="email" placeholder="Email" />
+    <input type="password" formControlName="password" placeholder="Password" />
+  </div>
+  <div id="div-button">
+    <button id="button" type="submit" [disabled]="!loginForm.valid">Get started !</button>
+  </div>
+</form>

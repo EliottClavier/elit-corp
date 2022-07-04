@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signOut
 } from '@angular/fire/auth';
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class LoginService {
 
   public async login({ email, password }) {
     try {
-      return await signInWithEmailAndPassword(this.auth, email, password);;
+      return await signInWithEmailAndPassword(this.auth, email, password);
     } catch (e) {
       return null;
     }
@@ -37,5 +38,12 @@ export class LoginService {
 
   public logout() {
     return signOut(this.auth);
+  }
+
+  public confirmPassword(control: FormControl, group: FormGroup, matchPassword: string) {
+    if (!control.value || group.controls[matchPassword].value !== null || group.controls[matchPassword].value === control.value) {
+      return null;
+    }
+    return { 'mismatch': true }
   }
 }
