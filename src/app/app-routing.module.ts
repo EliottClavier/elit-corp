@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {WelcomeComponent} from "./containers/welcome/welcome.component";
 import {FilmsListComponent} from "./containers/films-list/films-list.component";
-import {FilmDetail} from "./shared/models/filmdetail.model";
+import {FilmsDetailComponent} from "./containers/films-detail/films-detail.component";
 
 const routes: Routes = [
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'films-detail/:id',
-    component: FilmDetail
+    component: FilmsDetailComponent
   },
   {
     path: 'films-item',
