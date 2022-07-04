@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {WelcomeComponent} from "./containers/welcome/welcome.component";
+import {FilmsListComponent} from "./containers/films-list/films-list.component";
+import {FilmDetail} from "./shared/models/filmdetail.model";
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./containers/welcome/welcome.module').then( m => m.WelcomePageModule)
+    component: WelcomeComponent
   },
   {
     path: 'films-list',
-    loadChildren: () => import('./containers/films-list/films-list.module').then( m => m.FilmsListPageModule)
+    component: FilmsListComponent
   },
   {
     path: 'films-detail/:id',
-    loadChildren: () => import('./containers/films-detail/films-detail.module').then( m => m.FilmsDetailPageModule)
+    component: FilmDetail
   },
   {
     path: 'films-item',
-    loadChildren: () => import('./components/films-item/films-item.module').then( m => m.FilmsItemPageModule)
+    component: WelcomeComponent
   }
 
 ];

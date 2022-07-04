@@ -5,10 +5,10 @@ import {FilmDetail} from "../../shared/models/filmdetail.model";
 
 @Component({
   selector: 'app-films-detail',
-  templateUrl: './films-detail.page.html',
-  styleUrls: ['./films-detail.page.scss'],
+  templateUrl: './films-detail.component.html',
+  styleUrls: ['./films-detail.component.scss'],
 })
-export class FilmsDetailPage implements OnInit {
+export class FilmsDetailComponent implements OnInit {
 
   public id: number;
   public film: FilmDetail = new FilmDetail();

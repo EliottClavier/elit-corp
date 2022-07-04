@@ -4,11 +4,11 @@ import {TruncatePipe} from "../../pipes/truncate/truncate.pipe";
 
 @Component({
   selector: 'app-films-item',
-  templateUrl: './films-item.page.html',
-  styleUrls: ['./films-item.page.scss'],
+  templateUrl: './films-item.component.html',
+  styleUrls: ['./films-item.component.scss'],
   providers: [TruncatePipe]
 })
-export class FilmsItemPage implements OnInit {
+export class FilmsItemComponent implements OnInit {
 
   @Input() film: Film;
 

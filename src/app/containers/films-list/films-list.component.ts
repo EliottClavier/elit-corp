@@ -5,11 +5,11 @@ import {TruncatePipe} from "../../pipes/truncate/truncate.pipe";
 
 @Component({
   selector: 'app-films-list',
-  templateUrl: './films-list.page.html',
-  styleUrls: ['./films-list.page.scss'],
+  templateUrl: './films-list.component.html',
+  styleUrls: ['./films-list.component.scss'],
   providers: [TruncatePipe]
 })
-export class FilmsListPage implements OnInit {
+export class FilmsListComponent implements OnInit {
 
   public filmsList: Film[] = [];
   public spinnerShown: boolean = true;
